@@ -8,4 +8,11 @@ then
     convert $file /tmp/locker.png
 fi
 
+# Pause notifications (assuming dunst)
+notify-send "DUNST_COMMAND_PAUSE"
+
+# Lock using i3lock
 i3lock -e -f -i /tmp/locker.png
+
+# Resume notifications (assuming dunst)
+notify-send "DUNST_COMMAND_RESUME"
