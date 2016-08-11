@@ -42,20 +42,17 @@ case $1 in
 	killWM ;;
     lock )
 	locker ;;
-    suspend)
+    suspend )
 	lockimage
 	systemctl suspend
 	locker ;;
-    shutdown|poweroff)
+    shutdown|poweroff )
 	systemctl poweroff ;;
-    reboot)
+    reboot )
 	systemctl reboot ;;
-    interactive)
-	sessionmanager.sh $(printf "close prompt\nlock session\nsuspend session\nshutdown computer\nreboot computer\nexit WM" | rofi -dmenu -mesg "What do you want to do?") ;;
-    help|usage)
-	echo "Usage:" ;;
-    *)
-	;;
+    help|usage )
+	echo "Usage:"
+	printf "exit: Exit current WM \n lock: Lock session \n suspend: Suspend session \n shutdown or poweroff: Shutdown system \n reboot: Reboot system \n help: This message\n";;
+    *)   
+	printf "close prompt\nlock session\nsuspend session\nshutdown computer\nreboot computer\nexit WM" ;;
 esac
-
-
