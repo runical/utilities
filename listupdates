@@ -4,13 +4,13 @@ printf "Updates in the AUR:\n"
 cower -u
 
 printf "\nUpdates for runical-bin:\n"
-aurcheck -q runical-bin
+aurcheck runical-bin
 
 printf "\nUpdates for runical:\n"
-aurcheck -q runical
+aurcheck runical
 
 printf "\nUpdates for runical-vcs:\n"
-aurcheck -q runical-vcs
+aurcheck runical-vcs
 
 printf "\nUpdates in repositories:\n"
 checkupdates
