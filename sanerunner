@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if command -v rofi > /dev/null 2>&1; then
+    rofi -combi-modi 'window,run' -modi 'run,combi,window' -show combi -sidebar-mode
+else
+    dmenu_run
+fi

@@ -50,6 +50,14 @@ case $1 in
 	systemctl poweroff ;;
     reboot )
 	systemctl reboot ;;
+    interactive )
+	if command -v rofi > /dev/null 2>&1; then
+	    sessionmanager.sh $(sessionmanager.sh | rofi -dmenu -mesg "What do you want to do?")
+	else
+	    sessionmanager.sh $(sessionmanager.sh | dmenu)
+	fi
+	;;
+    close) ;;
     help|usage )
 	echo "Usage:"
 	printf "exit: Exit current WM \n lock: Lock session \n suspend: Suspend session \n shutdown or poweroff: Shutdown system \n reboot: Reboot system \n help: This message\n";;
