@@ -11,7 +11,7 @@ fi
 
 paccache -d -vk 2
 
-printf 'Clean out old packages from the cache? [Y/n]\n'
+printf 'Clean out old packages from the cache? [Y/n] '
 read answer
 
 if [[ $answer != n ]] ; then
